@@ -1,15 +1,14 @@
-const Router = new (require('restify-router')).Router();
+const router = new (require('restify-router')).Router();
 
-Router.get('/', function (req, res, next) {
+router.get('/', function (req, res, next) {
 	res.json({
 		message: 'Welcome to API',
 		query: req.query
 	});
-
 	next();
 });
 
-Router.get('/:name', function (req, res, next) {
+router.get('/:name', function (req, res, next) {
 	res.json({
 		message: `Welcome to API ${req.params.name}`,
 		query: req.query
@@ -17,7 +16,7 @@ Router.get('/:name', function (req, res, next) {
 	next();
 });
 
-Router.post('/', function (req, res, next) {
+router.post('/', function (req, res, next) {
 	res.json({
 		message: `Welcome to API ${req.body.name}`,
 		query: req.query
@@ -25,4 +24,4 @@ Router.post('/', function (req, res, next) {
 	next();
 });
 
-module.exports = Router;
+module.exports = router;
