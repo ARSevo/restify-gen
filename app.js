@@ -2,7 +2,7 @@ const restify = require('restify');
 const router = new (require('restify-router')).Router();
 const server = restify.createServer({
 	name: process.env.APPNAME || 'My API',
-	version: '1.0.0',
+	version: process.env.VERSION || '1.0.0',
 });
 
 const logger = require('./basic-logger');
