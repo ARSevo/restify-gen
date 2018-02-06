@@ -13,14 +13,18 @@ if (program.args.length < 1) {
 	program.help();
 }
 
+//console.log(`Filename : ${__filename}`);
+//console.log(`Directoryname : ${__dirname}`);
+
 let appfolder = program.args[0];
 if (program.force) {
 	shell.rm('-rf', appfolder);
 	shell.mkdir(program.args[0]);
-} else {
-	!shell.test('-e', appfolder) ?
-		shell.mkdir(program.args[0]) :
-		console.log(`\n  The directory ${appfolder} already exists. Use --force to delete contents`.red);
+} else if (!shell.test('-e', appfolder)) {
+	shell.mkdir(program.args[0]);
+}
+else {
+	console.log(`\n  The directory ${appfolder} already exists. Use --force to delete contents`.red); 
 	program.help();
 }
 
