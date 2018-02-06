@@ -33,8 +33,8 @@ module.exports = router;`;
 const appcontent = `const restify = require('restify');
 const router = new (require('restify-router')).Router();
 const server = restify.createServer({
-	name: process.env.APPNAME || 'My API',
-	version: process.env.VERSION || '1.0.0',
+	name: '%s',
+	version: '%s',
 });
 
 const logger = require('./basic-logger');
@@ -58,7 +58,7 @@ server.on('after', restify.plugins.metrics({ server: server }, function onMetric
 	logger.trace(\`\${metrics.method} \${metrics.path} \${metrics.statusCode} \${metrics.latency} ms\`);
 }));
 
-server.listen(process.env.PORT || 8080, function () {
+server.listen(%d, function () {
 	logger.info('%s listening at %s', server.name, server.url);
 });
 
@@ -120,19 +120,26 @@ const program = require('commander');
 const shell = require('shelljs');
 const fs = require('fs');
 const colors = require('colors');
+const util = require('util');
 const yellow = 'yellow';
+const green = 'green';
 const red = 'red';
 showmessage = (message = '', color = yellow) => console.log(colors[color](message));
 
 program.version('0.0.1')
 .usage('[options] applicationfolder')
-	.option('-p, --port <port>', 'API port')
-	.option('-f, --force', 'Clear contents of the application folder if exists')
+	.option('-n, --appname <appname>', 'api application name (default My API)')
+	.option('-v, --apiversion <apiversion>', 'api version (default 1.0.0)')
+	.option('-p, --port <port>', 'api port (default 8080)')
+	.option('-f, --force', 'clear contents of the application folder if exists')
 	.parse(process.argv);
 
 if (program.args.length < 1) {
 	program.help();
 }
+
+let selectedport = program.port || 8080;
+let formatedAppContent = util.format(appcontent, program.appname || 'My API', program.apiversion || '1.0.0', selectedport);
 
 let appfolder = program.args[0];
 if (program.force) {
@@ -150,7 +157,7 @@ else {
 showmessage('Create project folder');
 
 let folderpath = `./${appfolder}/`;
-fs.writeFileSync(`${folderpath}/app.js`, appcontent);
+fs.writeFileSync(`${folderpath}/app.js`, formatedAppContent);
 fs.writeFileSync(`${folderpath}/basic-logger.js`, loggercontent);
 fs.writeFileSync(`${folderpath}/package.json`, packagecontent);
 showmessage('Generate application files');
@@ -158,4 +165,11 @@ let routespath = `${folderpath}/routes`;
 shell.mkdir(routespath);
 fs.writeFileSync(`${routespath}/index.js`, routercontent);
 showmessage('Generate router sample (router/index.js)');
+
+showmessage('Success => Application created', green);
+showmessage(`\nGoto application folder\ncd ${appfolder}`, green);
+showmessage(`npm install`, green);
+showmessage(`node app.js`, green);
+showmessage(`Your application root is http://localhost:${selectedport}/api`, green);
+
 
