@@ -13,9 +13,6 @@ if (program.args.length < 1) {
 	program.help();
 }
 
-//console.log(`Filename : ${__filename}`);
-//console.log(`Directoryname : ${__dirname}`);
-
 let appfolder = program.args[0];
 if (program.force) {
 	shell.rm('-rf', appfolder);
