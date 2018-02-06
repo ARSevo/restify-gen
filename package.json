@@ -2,12 +2,8 @@
   "name": "restify-gen",
   "version": "1.0.0",
   "description": "Restify boilerplate",
-  "main": "app.js",
   "preferGlobal": true,
   "bin": "./cli/restify-gen.js",
-  "scripts": {
-    "test": "mocha"
-  },
   "keywords": [
     "restify",
     "template",
@@ -19,11 +15,8 @@
     "eslint": "^4.16.0"
   },
   "dependencies": {
-    "bunyan": "^1.8.12",
     "colors": "^1.1.2",
     "commander": "^2.13.0",
-    "restify": "^6.3.4",
-    "restify-router": "^0.5.0",
     "shelljs": "^0.8.1"
   }
 }
