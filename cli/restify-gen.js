@@ -30,9 +30,9 @@ else {
 
 let folderpath = `./${appfolder}/`;
 
-shell.cp('./app.js', folderpath);
-shell.cp('./package.json', folderpath);
-shell.cp('./basic-logger.js', folderpath);
+shell.cp('./requiredfiles/app.js', folderpath);
+shell.cp('./requiredfiles/package.json', folderpath);
+shell.cp('./requiredfiles/basic-logger.js', folderpath);
 let routespath = `${folderpath}/routes`;
 shell.mkdir(routespath);
-shell.cp('./routes/*', routespath);
+shell.cp('./requiredfiles/index.js', routespath);
