@@ -1,6 +1,6 @@
 [![NPM Version][npm-image]][npm-url]
 
-[npm-image]: https://img.shields.io/badge/restify--gen-1.0.3-blue.svg
+[npm-image]: https://img.shields.io/badge/restify--gen-1.0.4-blue.svg
 [npm-url]: https://www.npmjs.com/package/restify-gen
 
 ## Installation
