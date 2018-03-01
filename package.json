@@ -1,6 +1,6 @@
 {
 	"name": "restify-gen",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Restify boilerplate",
 	"preferGlobal": true,
 	"bin": "./cli/restify-gen.js",
