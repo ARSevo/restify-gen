@@ -11,7 +11,7 @@
 	},
 	"scripts": {
 		"stylefix": "eslint --fix cli/*",
-		"style" : "eslint cli/* cli/templates/*"
+		"style": "eslint cli/* cli/templates/*"
 	},
 	"keywords": [
 		"restify",

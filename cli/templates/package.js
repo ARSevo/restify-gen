@@ -7,6 +7,9 @@ module.exports = `{
 	  "template",
 	  "boilerplate"
 	],
+	"scripts": {
+		"start": "node app.js"
+	},
 	"devDependencies": {
 	  "eslint": "^4.16.0"
 	},
