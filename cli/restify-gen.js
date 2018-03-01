@@ -14,7 +14,7 @@ const green = 'green';
 const red = 'red';
 const showmessage = (message = '', color = yellow) => console.log(colors[color](message));
 
-program.version('0.0.1')
+program.version('1.0.4')
 	.usage('[options] applicationfolder')
 	.option('-n, --appname <appname>', 'api application name (default <applicationfolder>)')
 	.option('-d, --appdescription <appdescription>', 'api application description (default My API Description)')
