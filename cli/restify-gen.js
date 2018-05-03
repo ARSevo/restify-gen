@@ -3,6 +3,7 @@ const appcontent = require('./templates/app');
 const loggercontent = require('./templates/logger');
 const packagecontent = require('./templates/package');
 const routercontent = require('./templates/router');
+const clusteredcontent = require('./templates/clustered');
 
 const program = require('commander');
 const shell = require('shelljs');
@@ -20,6 +21,7 @@ program.version('1.0.4')
 	.option('-d, --appdescription <appdescription>', 'api application description (default My API Description)')
 	.option('-v, --apiversion <apiversion>', 'api version (default 1.0.0)')
 	.option('-p, --port <port>', 'api port (default 8080)')
+	.option('-c, --clustered', 'include cluster application file (clustered.js)')
 	.option('-f, --force', 'clear contents of the application folder if exists')
 	.parse(process.argv);
 
@@ -51,6 +53,7 @@ let folderpath = `./${appfolder}/`;
 fs.writeFileSync(`${folderpath}/app.js`, formatedAppContent);
 fs.writeFileSync(`${folderpath}/basic-logger.js`, formatedLoggerContent);
 fs.writeFileSync(`${folderpath}/package.json`, formatedPackageContent);
+program.clustered && fs.writeFileSync(`${folderpath}/clustered.js`, clusteredcontent);
 showmessage('Generate application files');
 let routespath = `${folderpath}/routes`;
 shell.mkdir(routespath);
@@ -60,7 +63,7 @@ showmessage('Generate router sample (router/index.js)');
 showmessage('Success => Application created', green);
 showmessage(`\nGoto application folder\ncd ${appfolder}`, green);
 showmessage('npm install', green);
-showmessage('node app.js', green);
+program.clustered ? showmessage('Clustered mode => node clustered.js', green) :  showmessage('node app.js', green);
 showmessage(`Your application root is http://localhost:${selectedport}/api`, green);
 
 
