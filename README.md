@@ -39,11 +39,16 @@ $ npm start
 
 This generator can also be further configured with the following command line flags.
 
+Usage: restify-gen [options] applicationfolder
+
+  Options:
+
     -V, --version                          output the version number
     -n, --appname <appname>                api application name (default <applicationfolder>)
     -d, --appdescription <appdescription>  api application description (default My API Description)
     -v, --apiversion <apiversion>          api version (default 1.0.0)
     -p, --port <port>                      api port (default 8080)
+    -c, --clustered                        include cluster application file (clustered.js)
     -f, --force                            clear contents of the application folder if exists
     -h, --help                             output usage information
 
