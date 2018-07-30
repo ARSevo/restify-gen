@@ -1,31 +1,41 @@
 {
-	"name": "restify-gen",
-	"version": "1.0.4",
-	"description": "Restify boilerplate",
-	"preferGlobal": true,
-	"bin": "./cli/restify-gen.js",
-	"files": [],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Volem/restify-gen.git"
-	},
-	"scripts": {
-		"stylefix": "eslint --fix cli/*",
-		"style": "eslint cli/* cli/templates/*"
-	},
-	"keywords": [
-		"restify",
-		"template",
-		"boilerplate"
-	],
-	"author": "volem",
-	"license": "MIT",
-	"devDependencies": {
-		"eslint": "^4.16.0"
-	},
-	"dependencies": {
-		"colors": "^1.1.2",
-		"commander": "^2.13.0",
-		"shelljs": "^0.8.1"
-	}
+  "name": "restify-gen",
+  "version": "1.0.4",
+  "description": "Restify boilerplate",
+  "preferGlobal": true,
+  "bin": {
+    "restify-gen": "./cli/restify-gen.js"
+  },
+  "files": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Volem/restify-gen.git"
+  },
+  "scripts": {
+    "stylefix": "eslint --fix cli/*",
+    "style": "eslint cli/* cli/templates/*"
+  },
+  "keywords": [
+    "restify",
+    "template",
+    "boilerplate"
+  ],
+  "author": "volem",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.16.0"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.13.0",
+    "shelljs": "^0.8.1"
+  },
+  "bugs": {
+    "url": "https://github.com/Volem/restify-gen/issues"
+  },
+  "homepage": "https://github.com/Volem/restify-gen#readme",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  }
 }
