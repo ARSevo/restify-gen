@@ -4,7 +4,7 @@
   "description": "Restify boilerplate",
   "preferGlobal": true,
   "bin": {
-    "restify-gen": "./cli/restify-gen.js"
+    "restify-gen": "index.js"
   },
   "files": [],
   "repository": {
@@ -23,7 +23,7 @@
   "author": "volem",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^4.16.0"
+    "eslint": "^4.19.1"
   },
   "dependencies": {
     "colors": "^1.1.2",
