@@ -12,8 +12,8 @@
     "url": "git+https://github.com/Volem/restify-gen.git"
   },
   "scripts": {
-    "stylefix": "eslint --fix cli/*",
-    "style": "eslint cli/* cli/templates/*"
+    "stylefix": "eslint --fix templates/*.js",
+    "style": "eslint *.js templates/*.js"
   },
   "keywords": [
     "restify",
