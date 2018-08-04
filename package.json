@@ -4,7 +4,9 @@
 	"description": "Restify boilerplate",
 	"preferGlobal": true,
 	"bin": "index.js",
-	"files": [],
+	"files": [
+		"template"
+	],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Volem/restify-gen.git"
