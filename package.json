@@ -7,7 +7,7 @@
 		"restify-gen": "index.js"
 	},
 	"files": [
-		"template"
+		"templates"
 	],
 	"repository": {
 		"type": "git",
