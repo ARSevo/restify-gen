@@ -31,7 +31,7 @@ if (program.args.length < 1) {
 
 const appfolder = program.args[0];
 const selectedport = program.port || 8080;
-const formatedAppContent = util.format(appcontent, program.appname || appfolder , program.apiversion || '1.0.0', selectedport);
+const formatedAppContent = util.format(appcontent, program.appname || appfolder, program.apiversion || '1.0.0', selectedport);
 const formatedPackageContent = util.format(packagecontent, program.appname || appfolder, program.apiversion || '1.0.0', program.appdescription || 'My API Description');
 const formatedLoggerContent = util.format(loggercontent, program.appname || appfolder);
 
@@ -63,7 +63,7 @@ showmessage('Generate router sample (router/index.js)');
 showmessage('Success => Application created', green);
 showmessage(`\nGoto application folder\ncd ${appfolder}`, green);
 showmessage('npm install', green);
-program.clustered ? showmessage('Clustered mode => node clustered.js', green) :  showmessage('node app.js', green);
+program.clustered ? showmessage('Clustered mode => node clustered.js', green) : showmessage('node app.js', green);
 showmessage(`Your application root is http://localhost:${selectedport}/api`, green);
 
 
