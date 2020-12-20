@@ -11,11 +11,11 @@ module.exports = `{
 		"start": "node app.js"
 	},
 	"devDependencies": {
-	  "eslint": "^4.16.0"
+	  "eslint": "^7.16.0"
 	},
 	"dependencies": {
-		"bunyan": "^1.8.12",
-		"restify": "^6.3.4",
-		"restify-router": "^0.5.0"
+		"bunyan": "^1.8.14",
+		"restify": "^8.5.1",
+		"restify-router": "^0.6.2"
 	}
 }`;
